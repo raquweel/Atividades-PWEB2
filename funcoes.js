@@ -5,7 +5,6 @@ export function area_circulo(raio){
 }
 
 //Operações
-
 export function calculadora(num1, num2, operador){
     if (operador=='+'){
         return num1 + num2;
@@ -54,4 +53,20 @@ export function decomposicao_em_primos(numero){
 
         }
     return primos_lista;
+}
+
+export function verificar_triangulo(lado1, lado2, lado3){
+    let triangulo;
+    if (lado1<=0 || lado2<=0 || lado3<=0){
+        return 'Valores inválidos';
+    } else {
+        if (lado1==lado2 && lado2==lado3){
+            triangulo = 'equilátero';
+        } else if (lado1!==lado2 && lado2!==lado3 && lado1!==lado3){
+            triangulo = 'escaleno';
+        } else {
+            triangulo = 'isósceles';
+        }
+        return triangulo;
+    }
 }
