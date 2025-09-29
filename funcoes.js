@@ -55,6 +55,7 @@ export function decomposicao_em_primos(numero){
     return primos_lista;
 }
 
+//Retorna o tipo do triângulo
 export function verificar_triangulo(lado1, lado2, lado3){
     let triangulo;
     if (lado1<=0 || lado2<=0 || lado3<=0){
@@ -69,4 +70,35 @@ export function verificar_triangulo(lado1, lado2, lado3){
         }
         return triangulo;
     }
+}
+
+//Operações em array
+
+//Soma
+export function soma_em_array(lista){
+    let soma = 0;
+    for(let i=0; i<(lista.length); i++){
+        soma += lista[i];
+    }
+    return soma;
+}
+
+//Soma de ímpares
+export function soma_impares_array(lista){
+    let soma = 0;
+    for(let i=0; i<(lista.length); i++){
+        if (lista[i] %2 != 0){
+            soma += lista[i];
+        }
+    }
+    return soma;
+}
+
+//Multiplicação
+export function produto_de_array(lista){
+    let produto = 1;
+    for(let i=0; i<(lista.length); i++){
+        produto *= lista[i];
+    }
+    return produto;
 }
