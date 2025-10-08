@@ -75,30 +75,34 @@ export function verificar_triangulo(lado1, lado2, lado3){
 //Operações em array
 
 //Soma
-export function soma_em_array(lista){
-    let soma = 0;
-    for(let i=0; i<(lista.length); i++){
-        soma += lista[i];
-    }
-    return soma;
+export function soma_em_array(array){
+    // let soma = 0;
+    // for(let i=0; i<(lista.length); i++){
+    //     soma += lista[i];
+    // }
+    // return soma;
+    return array.reduce((acc, valor) => acc + valor, 0);
 }
 
+
 //Soma de ímpares
-export function soma_impares_array(lista){
-    let soma = 0;
-    for(let i=0; i<(lista.length); i++){
-        if (lista[i] %2 != 0){
-            soma += lista[i];
-        }
-    }
-    return soma;
+export function soma_impares_array(array){
+    // let soma = 0;
+    // for(let i=0; i<(lista.length); i++){
+    //     if (lista[i] %2 != 0){
+    //         soma += lista[i];
+    //     }
+    // }
+    // return soma;
+    return array.filter(elemento => elemento%2!==0).reduce((acc,valor) => acc+valor,0);
 }
 
 //Multiplicação
-export function produto_de_array(lista){
-    let produto = 1;
-    for(let i=0; i<(lista.length); i++){
-        produto *= lista[i];
-    }
-    return produto;
+export function produto_de_array(array){
+    // let produto = 1;
+    // for(let i=0; i<(lista.length); i++){
+    //     produto *= lista[i];
+    // }
+    // return produto;
+    return array.reduce((acc,valor) => acc * valor, 1);
 }
