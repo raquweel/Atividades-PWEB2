@@ -1,0 +1,28 @@
+body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+    }
+    #flags-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 16px;
+    }
+    .flag {
+      text-align: center;
+      padding: 10px;
+    }
+    .flag img {
+      width: 64px;
+      height: 48px;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto 8px auto;
+    }
+    .flag p {
+      margin: 0;
+      font-size: 14px;
+      color: #333;
+    }
