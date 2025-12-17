@@ -11,24 +11,26 @@ export default function Home() {
     cidade: "",
     uf: "",
   });
+  const [error, setError] = useState("");
 
   async function callApi(CEP) {
-    const resp = await fetch(`https://viacep.com.br/ws/${CEP}/json/`);
-    if (resp.status === 200) {
-      const obj = await resp.json();
+    try {
+      const resp = await fetch(`https://viacep.com.br/ws/${CEP}/json/`);
+      if (resp.status === 200) {
+        const obj = await resp.json();
 
-      if (obj.erro) {
-        alert("CEP inválido");
+        if (obj.erro) {
+          throw new Error("CEP inválido");
+        }
+        setEndereco({
+          logradouro: obj.logradouro,
+          bairro: obj.bairro,
+          cidade: obj.localidade,
+          uf: obj.uf,
+        });
       }
-
-      setEndereco({
-        logradouro: obj.logradouro,
-        bairro: obj.bairro,
-        cidade: obj.localidade,
-        uf: obj.uf,
-      });
-    } else {
-      alert("Erro");
+    } catch (error) {
+      setError("CEP inválido");
     }
   }
 
@@ -44,6 +46,8 @@ export default function Home() {
             setCep={setCep}
             endereco={endereco}
             callApi={callApi}
+            error={error}
+            setError={setError}
           />
         </div>
       </main>
